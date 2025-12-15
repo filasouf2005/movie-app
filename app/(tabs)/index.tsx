@@ -18,6 +18,7 @@ import SearchBar from "@/components/SearchBar";
 import MovieCard from "@/components/MovieCard";
 import useFetch from "@/services/useFetch";
 import TrendingCard from "@/components/TrendingCard";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Index = () => {
   const router = useRouter();
@@ -35,7 +36,7 @@ const Index = () => {
   } = useFetch(() => fetchMovies({ query: "" }));
 
   return (
-    <View className="flex-1 bg-primary">
+    <SafeAreaView className="flex-1  bg-primary">
       <Image
         source={images.bg}
         className="absolute w-full z-0"
@@ -111,7 +112,7 @@ const Index = () => {
           </View>
         )}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
